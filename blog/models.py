@@ -10,6 +10,7 @@ class Company(models.Model):
     logo = models.ImageField(upload_to='images/')
     phone = models.CharField(max_length=11)
     email = models.EmailField(max_length=254)
+    about = models.TextField(blank=True)
     facebook = models.CharField(max_length=250)
     twitter = models.CharField(max_length=250)
     youtube = models.CharField(max_length=250)
@@ -33,7 +34,7 @@ class Post(models.Model):
     """
 
     title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', blank=True)
     body = models.TextField()
     pub = models.BooleanField()
     pub_date = models.DateTimeField(auto_now=False, auto_now_add=False)
